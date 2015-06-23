@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="textFieldDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhX-df-sAK" userLabel="field 1">
+                                <rect key="frame" x="15" y="30" width="570" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$00.00" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2e-Ni-4lM" userLabel="field 2">
+                                <rect key="frame" x="15" y="80" width="570" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2a-5p-hoY" userLabel="field 3">
+                                <rect key="frame" x="15" y="130" width="470" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO2-A7-Qux">
+                                <rect key="frame" x="535" y="130" width="51" height="31"/>
+                                <connections>
+                                    <action selector="allowToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="TrR-iM-EAD"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F2e-Ni-4lM" firstAttribute="width" secondItem="IhX-df-sAK" secondAttribute="width" id="4sd-B7-LQq"/>
+                            <constraint firstItem="lO2-A7-Qux" firstAttribute="trailing" secondItem="IhX-df-sAK" secondAttribute="trailing" constant="-1" id="BPM-VR-Rte"/>
+                            <constraint firstItem="IhX-df-sAK" firstAttribute="leading" secondItem="Q2a-5p-hoY" secondAttribute="leading" id="Efk-yB-JtS"/>
+                            <constraint firstItem="Q2a-5p-hoY" firstAttribute="width" secondItem="IhX-df-sAK" secondAttribute="width" constant="-100" id="Enm-dX-TRb"/>
+                            <constraint firstItem="F2e-Ni-4lM" firstAttribute="leading" secondItem="IhX-df-sAK" secondAttribute="leading" id="Jxl-YM-TeC"/>
+                            <constraint firstItem="IhX-df-sAK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-30" id="NkU-2r-nGo"/>
+                            <constraint firstItem="F2e-Ni-4lM" firstAttribute="top" secondItem="IhX-df-sAK" secondAttribute="bottom" constant="20" id="Qgn-cH-VXA"/>
+                            <constraint firstItem="lO2-A7-Qux" firstAttribute="bottom" secondItem="Q2a-5p-hoY" secondAttribute="bottom" constant="1" id="Xl4-tO-p6f"/>
+                            <constraint firstItem="IhX-df-sAK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="dsT-Dy-PrN"/>
+                            <constraint firstItem="Q2a-5p-hoY" firstAttribute="top" secondItem="F2e-Ni-4lM" secondAttribute="bottom" constant="20" id="tXw-gc-azH"/>
+                            <constraint firstAttribute="centerX" secondItem="IhX-df-sAK" secondAttribute="centerX" id="uGi-NF-qkf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allowSwitch" destination="lO2-A7-Qux" id="AC1-oR-rSU"/>
+                        <outlet property="field1" destination="IhX-df-sAK" id="9e5-Dx-Sdw"/>
+                        <outlet property="field2" destination="F2e-Ni-4lM" id="9zy-uu-E9L"/>
+                        <outlet property="field3" destination="Q2a-5p-hoY" id="l9e-vI-e7B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
